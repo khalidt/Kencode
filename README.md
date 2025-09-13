@@ -4,7 +4,7 @@
 
 It classifies Python statements into four categories:
 
-* **Keywords [K]:** core Python keywords (e.g., `if`, `class`, `def`, `in`, `not`)
+* **Keywords [K]:** core Python keywords (e.g., `if`, `class`, `def`, `in`)
 * **Operations [O]:** operators (e.g., `+`, `-`, `=`, `>=`, `not`,`+=`, `and`)
 * **Base-words [B]:** descriptor word in vocal instructions that clarifies the data type, role, or structure of a code element. (e.g., `string`, `variable`, `list`, `index`, `key`, `value`)
 * **Words [W]:** user-defined names or values or not [K][O][B].
