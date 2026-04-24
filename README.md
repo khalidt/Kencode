@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="img/KencodeLogo.png" width="150">
+</p>
+
 # Kencode Approach: Accessible Programming Through Natural Language
 
 > **Try it online:** [Kencode page](https://khalidalkhaldi.pythonanywhere.com/).
