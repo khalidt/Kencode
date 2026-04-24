@@ -20,6 +20,8 @@
 12. [For Technical Users](#for-technical-users)
 13. [The Converter Tool](#the-converter-tool)
 14. [Advantages of Kencode](#advantages-of-kencode)
+15. [License](#license)
+16. [Citation and Reference](#citation-and-reference)
 
 ---
 
@@ -597,6 +599,22 @@ GENERAL RULE (regex):  ^(?:\d+\s+)?(?:\[(?:K|O|W|B)\]\s)*(?:\[(?:W|K)\])$
 
 ---
 
+## License
+<p align="center">
+  <a href="https://github.com/khalidt/Kencode"><strong>Kencode</strong></a> © 2025 by 
+  <a href="https://github.com/khalidt/Kencode">Khalid Alkhaldi</a>  
+  is licensed under  
+  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+</p>
+
+<p align="center">
+  <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" width="20">
+  <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" width="20">
+  <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" width="20">
+  <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" width="20">
+</p>
+
+---
 ## Citation and Reference
 
 Kencode is introduced and formally described in the following research paper. If you use Kencode in your research, teaching, software, or any published work, please cite the original paper using one of the formats below.
