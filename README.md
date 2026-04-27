@@ -107,7 +107,8 @@ Every token in a programming statement is classified by Kencode into four types.
 - `[W]` tokens are plain words, variable names (split on underscores), string content, or verbalized numbers.
 - `[B]` tokens are the *glue* of Kencode. They are added (they don't exist in Python) to indicate the type of value or structure that follows.
 
-**note** Programming statements provide [K], [O], and [W]. so we need to add only [B] to construct valid Kencode instruction.
+**Note:** Programming statements provide [K], [O], and [W]. so we need to add only [B] to construct valid Kencode instruction.
+
 ---
 
 ## Base-Word Reference Table
