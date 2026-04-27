@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name            = "Kencode"
 version         = "1.0.0"
-description     = "Accessible programming through natural language — bidirectional Python ↔ Kencode converter"
+description     = "Kencode is a bidirectional mapping method between Python programming code and natural spoken/written language instructions. It was designed to make programming accessible to people who face difficulties with the punctuation and special characters that conventional programming requires, such as people using voice input, alternative keyboards, or those learning to code for the first time."
 readme          = "README.md"
 license         = { text = "CC BY-NC-SA 4.0" }
 requires-python = ">=3.9"
