@@ -9,6 +9,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/khalidt/Kencode)](https://github.com/khalidt/Kencode/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/khalidt/Kencode)](https://github.com/khalidt/Kencode/issues)
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+[![Wiki](https://img.shields.io/badge/docs-wiki-blue)](https://github.com/khalidt/Kencode/wiki)
 
 # Kencode Approach: Accessible Programming Through Natural Language
 
