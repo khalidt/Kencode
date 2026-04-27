@@ -2,6 +2,14 @@
   <img src="img/KencodeLogo.png" width="150">
 </p>
 
+[![PyPI version](https://img.shields.io/pypi/v/Kencode)](https://pypi.org/project/Kencode/)
+[![PyPI downloads](https://img.shields.io/pypi/dm/Kencode)](https://pypi.org/project/Kencode/)
+[![Python versions](https://img.shields.io/pypi/pyversions/Kencode)](https://pypi.org/project/Kencode/)
+[![CI](https://img.shields.io/github/actions/workflow/status/khalidt/Kencode/tests.yml?label=tests)](https://github.com/khalidt/Kencode/actions)
+[![GitHub stars](https://img.shields.io/github/stars/khalidt/Kencode)](https://github.com/khalidt/Kencode/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/khalidt/Kencode)](https://github.com/khalidt/Kencode/issues)
+[![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
+
 # Kencode Approach: Accessible Programming Through Natural Language
 
 > **Try it online:** [Kencode page](https://khalidalkhaldi.pythonanywhere.com/).
