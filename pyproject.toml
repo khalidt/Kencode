@@ -1,0 +1,54 @@
+[build-system]
+requires      = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name            = "Kencode"
+version         = "1.0.0"
+description     = "Accessible programming through natural language — bidirectional Python ↔ Kencode converter"
+readme          = "README.md"
+license         = { text = "CC BY-NC-SA 4.0" }
+requires-python = ">=3.9"
+keywords        = [
+    "accessibility", "voice programming", "natural language",
+    "python converter", "kencode", "assistive technology",
+    "code verbalization", "inclusive programming"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "Intended Audience :: Science/Research",
+    "Topic :: Software Development :: Code Generators",
+    "Topic :: Scientific/Engineering :: Human Machine Interfaces",
+    "Topic :: Accessibility",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+]
+
+[[project.authors]]
+name  = "Khalid Alkhaldi"
+email = "k.t.alkhaldi@gmail.com"
+
+[project.urls]
+Homepage      = "https://khalidalkhaldi.pythonanywhere.com/"
+Repository    = "https://github.com/khalidt/kencode"
+Documentation = "https://github.com/khalidt/kencode#readme"
+"Bug Tracker" = "https://github.com/khalidt/kencode/issues"
+Paper         = "https://doi.org/10.18293/JVLC2025-N3-079"
+
+[project.scripts]
+kencode         = "kencode.kencode_converter:main_cli"
+kencode-decode  = "kencode.kencode_decoder:main_cli"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[tool.setuptools.package-data]
+kencode = ["py.typed"]
