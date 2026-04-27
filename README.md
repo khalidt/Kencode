@@ -802,13 +802,6 @@ Kencode is introduced and formally described in the following research paper. If
 }
 ```
 
-
-### Acknowledgment Template
-
-If Kencode contributed to your work but is not a primary citation subject, you may acknowledge it as follows:
-
-> *"Code examples in this work were represented using the Kencode natural language mapping system (Alkhaldi et al., 2025). The online tool is available at https://khalidalkhaldi.pythonanywhere.com/"*
-
 ---
 
 > **Note:** If you publish work that builds upon, extends, or evaluates Kencode, the authors welcome notification. The tool is provided freely for educational, research, and accessibility purposes in the spirit of the original paper's mission to advance voice-based and accessible programming.
