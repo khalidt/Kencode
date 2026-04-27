@@ -20,20 +20,22 @@
 
 1. [What is Kencode?](#what-is-kencode)
 2. [Why Kencode?](#why-kencode)
-3. [How It Works, The Core Idea](#how-it-works)
-4. [Kencode classification](#kencode-classification-four-token-types)
-5. [Base-Word Reference Table](#base-word-reference-table)
-6. [Operator Reference Table](#operator-reference-table)
-7. [Escape Sequence Reference](#escape-sequence-reference)
-8. [The Kencode Sequence (KS)   General Rule](#the-kencode-sequence-general-rule)
-9. [Reading a Kencode Instruction](#reading-a-kencode-instruction)
-10. [Complete Examples by Category](#complete-examples-by-category)
-11. [For Non-Technical Users](#for-non-technical-users)
-12. [For Technical Users](#for-technical-users)
-13. [The Converter Tool](#the-converter-tool)
-14. [Advantages of Kencode](#advantages-of-kencode)
-15. [License](#license)
-16. [Citation and Reference](#citation-and-reference)
+3. [Installation](#installation)
+4. [Usage](#usage)
+5. [How It Works, The Core Idea](#how-it-works)
+6. [Kencode classification](#kencode-classification-four-token-types)
+7. [Base-Word Reference Table](#base-word-reference-table)
+8. [Operator Reference Table](#operator-reference-table)
+9. [Escape Sequence Reference](#escape-sequence-reference)
+10. [The Kencode Sequence (KS)   General Rule](#the-kencode-sequence-general-rule)
+11. [Reading a Kencode Instruction](#reading-a-kencode-instruction)
+12. [Complete Examples by Category](#complete-examples-by-category)
+13. [For Non-Technical Users](#for-non-technical-users)
+14. [For Technical Users](#for-technical-users)
+15. [The Converter Tool](#the-converter-tool)
+16. [Advantages of Kencode](#advantages-of-kencode)
+17. [License](#license)
+18. [Citation and Reference](#citation-and-reference)
 
 ---
 
@@ -80,6 +82,148 @@ Programming languages rely heavily on punctuation `()`, `[]`, `{}`, `'`, `"`, `#
 - **Non-native speakers** learning programming face both language and syntax barriers simultaneously
 
 Kencode solves this by providing a clean, word-based alternative that maps one-to-one with real Python code; no information is lost, and any valid Kencode instruction can be converted back to exactly the Python it represents.
+
+
+
+
+
+---
+
+## Installation
+
+```bash
+pip install Kencode
+```
+
+Requires Python 3.9 or higher. No external dependencies.
+
+---
+
+## Usage
+
+### Python Library
+
+```python
+from kencode import python_to_kencode, decode_kvi
+
+# Python → Kencode
+ks, kvi = python_to_kencode("x = 10")
+print(ks)    # [W][O][B][W]
+print(kvi)   # x equals digit ten
+
+# Kencode → Python
+ks, py = decode_kvi("x equals digit ten")
+print(py)    # x = 10
+```
+
+**Process a file line by line:**
+
+```python
+from kencode import python_to_kencode
+
+with open("my_script.py", "r") as f:
+    for i, line in enumerate(f.readlines(), 1):
+        ks, kvi = python_to_kencode(line.rstrip())
+        if ks:
+            print(f"Line {i:>3}: {line.rstrip()}")
+            print(f"         KS : {ks}")
+            print(f"         KVI: {kvi}")
+```
+
+**Process a file and save to CSV:**
+
+```python
+from kencode import python_to_kencode
+import csv
+
+with open("my_script.py") as f:
+    lines = f.readlines()
+
+with open("output.csv", "w", newline="") as f:
+    writer = csv.writer(f)
+    writer.writerow(["line_no", "python_code", "KS", "KVI"])
+    for i, line in enumerate(lines, 1):
+        ks, kvi = python_to_kencode(line.rstrip())
+        writer.writerow([i, line.rstrip(), ks, kvi])
+```
+
+**Decode a KVI file:**
+
+```python
+from kencode import decode_kvi
+
+with open("my_instructions.txt") as f:
+    for i, line in enumerate(f.readlines(), 1):
+        line = line.strip()
+        if line:
+            ks, py = decode_kvi(line)
+            print(f"Line {i:>3}: KS={ks}  PY={py}")
+```
+
+**Round-trip (Python → KVI → Python):**
+
+```python
+from kencode import python_to_kencode, decode_kvi
+
+ks, kvi  = python_to_kencode("for i in range(5):")
+ks2, py  = decode_kvi(kvi)
+print(py)  # for i in range(5):
+```
+
+**Full file processing with built-in function:**
+
+```python
+from kencode.kencode_converter import process_file
+
+process_file("my_script.py")
+# Prints KS + KVI for every line and saves my_script_kencode.csv
+```
+
+---
+
+### Command Line (CLI)
+
+```bash
+# Encode a Python file → prints KS + KVI and saves CSV
+kencode my_script.py
+
+# Decode a single KVI instruction
+kencode-decode "x equals digit ten"
+
+# Decode a KVI file (batch mode)
+kencode-decode -f my_instructions.txt
+
+# Interactive REPL — type KVI, get Python back
+kencode-decode
+```
+
+**REPL example:**
+
+```
+Kencode KVI -> Python  (type 'quit' to exit)
+
+KVI> name equals string Alice
+KS  : [W][O][B][W]
+PY  : name = "Alice"
+
+KVI> for variable i in call range pass digit five
+KS  : [K][B][W][K][B][W][B][B][W]
+PY  : for i in range(5):
+```
+
+---
+
+### Quick Reference
+
+| Task | Method | Command / Code |
+|------|--------|----------------|
+| Encode one line | Library | `python_to_kencode("x = 10")` |
+| Decode one KVI | Library | `decode_kvi("x equals digit ten")` |
+| Encode a file | Library | `process_file("script.py")` |
+| Encode a file | CLI | `kencode script.py` |
+| Decode one KVI | CLI | `kencode-decode "x equals digit ten"` |
+| Decode a file | CLI | `kencode-decode -f instructions.txt` |
+| Interactive mode | CLI | `kencode-decode` |
 
 ---
 
