@@ -391,6 +391,7 @@ $$
 | `^` | Start of the sequence |
 | `(?:\d+\s+)?` | Optional indent prefix, a digit followed by a space (e.g. `1 ` for one indent level) |
 | `(\[(?:K\|O\|W\|B)\])+` | One or more tags, each exactly `[K]`, `[O]`, `[W]`, or `[B]` |
+| `(?:\[(?:W\|K)\])` | Ensure the KVI terminates with [W] or [K] only |
 | `$` | End of the sequence |
 
 This rule enforces that:
