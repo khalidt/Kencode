@@ -1,3 +1,4 @@
+cat << 'EOF' > .github/workflows/tests.yml
 name: Tests
 
 on:
@@ -5,6 +6,7 @@ on:
     branches: ["main", "master"]
   pull_request:
     branches: ["main", "master"]
+  workflow_dispatch:
 
 jobs:
   test:
@@ -26,16 +28,13 @@ jobs:
           python-version: ${{ matrix.python-version }}
           cache: pip
 
-      - name: Install package and test dependencies
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -e ".[dev]"
+          python -m pip install pytest pytest-cov
+          python -m pip install -e .
 
       - name: Run tests with coverage
         run: |
-          pytest tests/ -v --tb=short --cov=kencode --cov-report=term-missing
-
-      - name: Verify CLI entry points
-        run: |
-          kencode --version || true
-          kencode-decode --help || true
+          python -m pytest tests/ -v --tb=short --cov=kencode --cov-report=term-missing
+EOF
